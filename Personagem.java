@@ -1,4 +1,4 @@
-public class Personagem {
+public abstract class Personagem {
     String nome;
     String classe;
     int nivel;
@@ -20,5 +20,7 @@ public class Personagem {
         System.out.println("Pontos de Vida: " + pontosDeVida);
         System.out.println("Poder Base: " + poderBase);
     }
+
+    public abstract void usarHabilidadeEspecial();
 }
 
