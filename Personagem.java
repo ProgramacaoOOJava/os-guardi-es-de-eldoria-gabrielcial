@@ -1,4 +1,4 @@
-public abstract class Personagem {
+public abstract class Personagem implements Comparable<Personagem> {
     String nome;
     String classe;
     int nivel;
@@ -13,6 +13,10 @@ public abstract class Personagem {
         this.poderBase = poderBase;
     }
 
+     public String getNome() {
+        return nome;
+    }
+
     public void exibirStatus() {
         System.out.println("Nome: " + nome);
         System.out.println("Classe: " + classe);
@@ -22,5 +26,14 @@ public abstract class Personagem {
     }
 
     public abstract void usarHabilidadeEspecial();
+
+    @Override
+    public int compareTo(Personagem outro) {
+        return Integer.compare(this.nivel, outro.nivel);
+    }
+
+     public double calcularPoderTotal() {
+        return poderBase;
+    }
 }
 

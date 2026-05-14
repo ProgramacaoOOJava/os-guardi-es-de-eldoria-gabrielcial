@@ -8,6 +8,18 @@ public class Main {
         System.out.println("=== BEM-VINDOS AO REINO DE ELDORIA ===");
         Guerreiro arthus = new Guerreiro("Arthus", "Guerreiro", 1, 100, 10.5, 8.0);
         Mago morgana = new Mago("Morgana", "Arqueira", 5, 80, 12.5, 10.0);
+        Guerreiro borin = new Guerreiro("Borin", "Guerreiro", 1, 100, 10.5, 8.0);
+        Mago elara = new Mago("Elara", "Arqueira", 5, 80, 12.5, 10.0);
+
+
+        // Criando Grupos
+        Grupo grupoA = new Grupo("Os Vingadores");
+        Grupo grupoB = new Grupo("Thunderbolts");
+        grupoA.adicionarMembro(arthus);
+        grupoA.adicionarMembro(elara);
+        grupoB.adicionarMembro(borin);
+        grupoB.adicionarMembro(morgana);
+
 
         // Exibindo Status
         System.out.println("--- Guerreiro ---");
@@ -37,5 +49,8 @@ public class Main {
             p.usarHabilidadeEspecial();
             System.out.println("--------------------------");
         }
+
+        System.out.println("\n ----- Batalha interna (apenas para demonstração) ----");
+        grupoA.batalhar(grupoA.getMembros().get(0), grupoA.getMembros().get(1));
     }
 }
